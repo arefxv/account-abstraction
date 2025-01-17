@@ -1,66 +1,67 @@
-## Foundry
+# AccountAb-straction: A Minimal Account Abstraction Solution Supporting Ethereum and zkSync
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+This repository implements a robust and secure account abstraction contract designed for Ethereum and zkSync networks. Built with the Foundry framework, it leverages modularity and efficiency to handle user operations effectively.
 
-Foundry consists of:
+## Features
+* **cross-Network Compatibility**: Supports Ethereum and zkSync for seamless interoperability.
+* **Modular Design**: Utilizes Foundry libraries and OpenZeppelin utilities for security and extensibility.
+* **Account Abstraction**: Adheres to EIP-4337 to enable flexible user operations.
+* **Security**: Incorporates signature validation, owner-based controls, and secure fund transfers.
 
--   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
--   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
--   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
+## Contract Overview
 
-## Documentation
+### MinimalAccount.sol
 
-https://book.getfoundry.sh/
+* Implements account abstraction for Ethereum.
+* Allows external calls, user operation validation, and pre-funding.
+* Ensures secure interaction with the EntryPoint contract.
 
-## Usage
+### ZkMinimalAccount.sol
 
-### Build
+* Extends account abstraction functionality for zkSync.
+* Handles transaction validation, execution, and bootloader interactions.
+* Ensures compliance with zkSync's lifecycle for type 113 transactions.
 
-```shell
-$ forge build
+## Quick Start
+
+1. Clone the Repository
+
+```
+git clone https://github.com/arefxv/account-abstraction
+cd account-abstraction
 ```
 
-### Test
+2. Install Dependencies Ensure you have Foundry installed. Then, install the necessary packages:
 
-```shell
-$ forge test
+```
+foundryup
+forge install eth-infinitism/account-abstraction@v0.7.0 --no-commit
+forge install openzeppelin/openzeppelin-contracts@v5.0.2 --no-commit
+forge install Cyfrin/foundry-devops --no-commit
+forge install Cyfrin/foundry-era-contracts@v0.0.3 --no-commit
 ```
 
-### Format
+3. Compile the Contracts
 
-```shell
-$ forge fmt
 ```
 
-### Gas Snapshots
+forge build
 
-```shell
-$ forge snapshot
 ```
 
-### Anvil
+4. Run Tests
 
-```shell
-$ anvil
+```
+forge test
 ```
 
-### Deploy
+## zkSync Foundry
 
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
+```
+foundryup-zksync
+forge zkbuild
+forge zktest
 ```
 
-### Cast
-
-```shell
-$ cast <subcommand>
-```
-
-### Help
-
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
-```
+___
+# Thank you for checking it out!# account-abstraction
