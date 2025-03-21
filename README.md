@@ -1,6 +1,6 @@
 # AccountAbstraction: A Minimal Account Abstraction Solution Supporting Ethereum and zkSync
 
-This repository implements a robust and secure account abstraction contract designed for Ethereum and zkSync networks. Built with the Foundry framework, it leverages modularity and efficiency to handle user operations effectively.
+This repository implements a robust and secure account abstraction contract designed for Ethereum and zkSync networks. Built with the Foundry framework, it leverages modularity and efficiency to handle user operations effectively
 
 ## Features
 * **cross-Network Compatibility**: Supports Ethereum and zkSync for seamless interoperability.
